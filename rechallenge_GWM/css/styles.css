@@ -1,0 +1,465 @@
+@charset "utf-8";
+/* CSS Document */
+
+/********************* 共通部分 ********************/
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+/*フォント外部ファイル読み込み*/
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Noto Sans JP", 'sans-serif', "Hiragino Sans", "Meiryo";
+  /*  モバイル横向き文字サイズ調整*/
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  /*  モバイル横向き文字サイズ調整　ここまで*/
+  color: #333333;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+select {
+  -webkit-appearance: none;
+  /* appearance: none; */
+}
+
+/****************** 共通部分　ここまで **************/
+
+/************************トップ画面************************/
+.body_top {
+  width: 100vw;
+}
+
+.header_top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8.5vw;
+  background-color: rgba(92, 172, 242, 0.1);
+}
+
+.header_time_top {
+  font-size: 3.5vw;
+  padding-right: 3.2vw;
+  color: #333333;
+}
+
+.header_time_top i {
+  font-style: normal;
+}
+
+.name_time, .name_time_grayout {
+  /*  background-color: cadetblue;*/
+  height: 16vw;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  border-width: thin;
+  border-bottom: 0.05px solid #999999;
+}
+
+.name_time:active {
+  /* background-color: rgba(92, 172, 242, 0.1); */
+  opacity: 1;
+}
+
+.name_time_grayout {
+  background-color: rgba(153, 153, 153, 0.1);
+  color: rgba(153, 153, 153, 0.8);
+}
+
+.name_top {
+/*   background-color: rgba(153, 153, 153, 0.3); */
+  width: 25vw;
+  font-size: 4.8vw;
+  font-weight: bold;
+  padding: 0 2.6vw 0 15px;
+  align-items: center;
+  text-align: start;
+  /*名前のスクロール*/
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* スクロールバー非表示 */
+  -ms-overflow-style: none;  /* IE, Edge 対応 */
+  scrollbar-width: none;  /* Firefox 対応 */
+}
+
+.name_top div {
+  width: 22.6vw;
+}
+
+.name_top::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari 対応 */
+  /*スクロールバー非表示　ここまで*/
+}
+
+.comment {
+  align-items: center;
+  /* background-color: rgba(153, 153, 153, 0.3) */
+}
+
+.comment div {  /* トップ画面 */
+  /* background-color: rgba(153, 153, 255, 0.3); */
+  font-size: 3.5vw;
+  width: 34.5vw;
+  line-height: 3.5vw;
+  margin-left: 0vw;
+  /*コメントのスクロール*/
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* スクロールバー非表示 */
+  -ms-overflow-style: none;  /* IE, Edge 対応 */
+  scrollbar-width: none;  /* Firefox 対応 */
+}
+
+.comment div::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari 対応 */
+  /*スクロールバー非表示　ここまで*/
+}
+
+.show_count {
+  margin-left: 12px;
+}
+
+.time_top {  /* モバイル */
+  /* background-color: rgba(153, 153, 153, 0.3); */
+  width: 100vw;
+  white-space: nowrap;
+  margin: 0 2.9vw;
+}
+
+.start_time {  /* モバイル */
+  /* background-color: rgba(255, 153, 153, 0.3); */
+  font-size: 3.2vw;
+  font-style: normal;  /* イタリック体を標準に */
+  margin-left: 3.3vw;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: -1px;
+}
+
+.nami {
+  /* background-color: rgba(153, 153, 153, 0.3); */
+  font-size: 14px;
+  width: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 6px;
+  margin-left: 3px;
+}
+
+/*直帰・直帰以外 共通*/
+.end_time, .end_time_bounce {/* モバイル */
+  /* background-color: rgba(11, 158, 6, 0.3); */
+  font-size: 3.7vw;
+  font-weight: bold;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/*直帰*/
+.end_time_bounce {/* モバイル */
+  padding: -0.9vw 0.5vw 0 3.0vw;  /* 時間の位置 */
+  color: #F21B3F;
+  display: inline-block;
+}
+
+.row { 
+   /* line-height: 85vw;  */
+ }
+
+/************************トップ画面　ここまで************************/
+
+/************************レスポンシブ対応************************/
+@media screen and (min-width: 1000px) {
+  .body_top {
+    margin: 0 auto;/*コラムを中央ぞろえにする*/
+    max-width: 65rem;    /* 1040px */
+  }
+
+  .header_top {
+    width: 96.5%;
+    height: 4rem;
+  }
+
+  .header_time_top {
+    font-size: 1.4rem;
+  }
+
+  .main_top {
+/*    background-color: rgba(255, 153, 153, 0.3);*/
+    width: 49.5%;
+    height: 600px;    /* 折り返し高さ 5行で折り返す場合は300px */
+    display: flex;    /* 横並びにする */
+    flex-direction: column;    /* 行にする */
+    flex-wrap: wrap;    /* 折り返し高さが来たら折り返す */
+    margin: 0 10px 0 0px;
+  }
+
+  .name_time, .name_time_grayout {
+/*    background-color: rgba(255, 255, 153, 0.3); */
+    width: 95%;
+    max-height: 7.5rem;
+    transition: .3s;
+  }
+
+  .name_time:hover {
+    background-color: rgba(92, 172, 242, 0.01);
+    /* border: thin solid #5CACF2; */
+    opacity: 0.8;
+  }
+
+  .name_top {
+    /* background-color: rgba(255, 153, 153, 0.3); */
+    font-size: 1.5rem;
+    width: 5.0rem;
+    max-width: 4.0rem;
+    min-width: 142px;
+  }
+
+  .name_top div {
+    /* background-color: rgba(255, 255, 153, 0.3); */
+    width: 6.3rem;
+  }
+
+   .comment div {/*レスポンシブ対応 */
+    /* background-color: rgba(153, 153, 153, 0.3); */
+    font-size: 16px;
+    width: 160px;
+    margin-left: 0; 
+  }
+
+  .comment {
+    /* background-color: rgba(255, 255, 153, 0.3); */
+    margin-left: 10px;
+    width: 170px;
+  }
+
+  .time_top {
+    /* background-color: rgba(153, 255, 153, 0.3); */
+    padding-left: 10rem;
+    height: 1.9rem;
+  }
+
+  .start_time {/*レスポンシブ対応 */
+    font-size: 1.1rem;
+    width: 3rem;
+    margin-left: -9.4rem;
+    margin-top: 2rem;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 27px;
+  }
+
+  .start_time:after {
+    font-size: 1.1rem;
+    width: 2rem;
+  }
+
+  .end_time, .end_time_bounce {
+    font-size: 1.4rem;
+    width: 4rem;
+    margin-left: 15px;
+  }
+}
+
+/************************レスポンシブ対応　ここまで************************/
+
+/************************編集画面************************/
+.body_edit {
+  width: 23.4rem;
+}
+
+/*  クリア・登録ボタン・×ボタン  */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.header_edit {
+  height: 3.2rem;/* fb */
+  margin-bottom: 4.25rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(92, 172, 242, .1);
+  padding: 0 0.75rem;
+}
+
+.main_edit {
+  margin: 0 0.75rem;
+}
+
+.name_edit {
+  height: 3.75rem;
+  display: flex;
+  align-items: center;
+  width: 21.9rem;
+  background-color: rgba(92, 172, 242, .3);
+  text-align: center;
+  margin-bottom: 2.9rem;/* fb */
+  border-radius: 0.13rem;
+}
+
+.name_edit p {
+  font-size: 0.88rem;
+  padding-left: 0.38rem;
+  width: 2.5rem;
+}
+
+.name_edit h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  width: 18.6rem;
+  padding: 0.2rem 0.38rem 0 0.88rem;
+}
+
+.time_edit {
+  box-sizing: border-box;
+  width: 3.75rem;
+  height: 3.1rem;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  border-radius: 0.13rem;
+  background-color: #fff;
+  border: 1px solid #999;
+}
+
+.time_form {
+  margin-bottom: 2.9rem;/* fb */
+  flex-wrap: nowrap;
+  background-color: #fff;
+}
+
+.time_form p {
+  font-size: 0.88rem;
+  padding-left: 0.38rem;
+  margin-bottom: 0.4rem;/* fb */
+}
+
+.colon {
+  padding: 0 0.5rem;/* fb */
+}
+
+.wave {
+  padding: 0 0.5rem;/* fb */
+}
+
+.comment_title {
+  margin-bottom: 0.4rem;/* fb */
+  border-radius: 0.13rem;
+}
+
+label {
+  font-size: 0.88rem;
+  padding-left: 0.38rem;
+}
+
+.remove_button {
+  background-image: url(../img/clear.png);
+  height: 1.0rem;
+  width: 1.0rem;
+  object-fit: cover;
+  background-size: cover;
+  margin-left: 0.63rem;
+  vertical-align: middle;
+}
+
+.comment_edit {
+  width: 22.0rem;/* fb */
+  height: 6.0rem;/* fb */
+  resize: none;
+  padding: 0.63rem 0.75rem;
+}
+
+.comment_edit::placeholder {
+  font-size: 0.88rem;
+  color: #999;
+}
+
+.comment_form {
+  margin-left: 2px;
+  width: 21.8rem;
+  height: 7.5rem;
+}
+
+.comment_edit {
+  padding: 24px auto auto 24px;
+}
+
+/* 「警告マーク」の疑似要素 */
+.error_message {
+  position: absolute;
+  display: flex;
+}
+
+.active {
+  font-size: 0.94rem;
+  margin-left: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: #F21B3F;
+}
+
+.active::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-size: cover;
+  background-image: url(../img/error.png);
+  top: .2rem;/* fb */
+  left: 0.85rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+/* 「警告マーク」の疑似要素 ここまで */
+
+
+ul {
+  list-style: none;
+  display: flex;
+  height: 3.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  width: 5.6rem;
+  height: 3.1rem;
+  background: #999;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 0.88rem;
+  margin-top: 2.9rem;/* fb */
+}
+
+.insert {
+  width: 13rem;
+  height: 3.1rem;
+  background-color: rgba(92, 172, 242, 1);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 1.4rem;
+  margin-top: 2.9rem;/* fb */
+  padding-top: 0.1rem;
+}
+
+/************************編集画面　ここまで************************/
+
